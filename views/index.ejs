@@ -1,0 +1,34 @@
+<%- include('partials/header.ejs') %>
+
+<form action="/submit" method="POST" id="form">
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" name="title" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+            <textarea class="form-control" name="text" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<% if (locals.blog) { %>
+
+    <h2>Blog Posts</h2> <br><br>
+
+<% blog.forEach((post, index) => { %>
+    <div>
+        <h3><%= post.title1 %></h3>
+        <p><%= post.body %></p>
+        <!-- when you use the forEach method on an array, the second argument passed to the callback function is the index of the current element being processed. -->
+        <p><a href="/edit/<%= index %>">Edit</a>  <a href="/delete/<%= index %>" onclick="return confirm('Are you sure you want to delete this post?')">Delete</a></p> <!-- Include the index of the post -->
+    </div>
+    <br>
+<% }); %>
+
+<%  } %>
+<%- include('partials/footer.ejs') %>
+
+    

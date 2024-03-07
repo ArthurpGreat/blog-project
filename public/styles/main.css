@@ -1,0 +1,13 @@
+body {
+    background-color: whitesmoke;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+#form {
+    padding: 20px;
+    width: 50%;
+
+}
+
+

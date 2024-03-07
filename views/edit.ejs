@@ -1,0 +1,21 @@
+<%- include('partials/header.ejs') %>
+
+<h2>Edit Post</h2>
+
+<form action="/update/<%= index %>" method="POST" id="form">
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1"  class="form-label">Title</label>
+            <input type="text" name="title" id="title" value= "<%= article.title1 %>" class="form-control" placeholder="Title">
+          </div>
+        
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Content</label>
+            <textarea class="form-control" name="text" id="text" rows="3"><%= article.body %></textarea>
+        </div>
+        
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+</form>
+
+<%- include('partials/footer.ejs') 
